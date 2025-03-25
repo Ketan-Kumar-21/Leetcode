@@ -9,3 +9,5 @@ class Solution:
                     mini=j
             arr[i],arr[mini]=arr[mini],arr[i]
         return arr
+        
+#TC=O(n^2)
