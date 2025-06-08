@@ -1,0 +1,35 @@
+#Brute Force App
+Tc=O(N)+O(N/2)
+Sc=0(1)
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        count = 0
+        current = head
+        while current:
+            count += 1
+            current = current.next
+
+        middle = count // 2
+        current = head
+        for _ in range(middle):
+            current = current.next
+
+        return current    
+
+Methode 2:
+
+Tc:O(N)
+Sc:0(1)
+
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow = head
+        fast = head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow
