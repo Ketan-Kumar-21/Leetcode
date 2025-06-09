@@ -1,0 +1,35 @@
+#Brute Force App
+#Tc=O(n) and Sc=O(n)
+
+class Solution:
+    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        visited = set()
+        current = head
+
+        while current:
+            if current in visited:
+                return current
+            visited.add(current)
+            current = current.next
+
+        return None
+#Optimal App
+#TC=O(n) and Sc=O(1)
+
+class Solution:
+    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        fast=head
+        slow=head
+        while fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next
+            if slow == fast:
+                break
+        else:
+            return None
+        slow = head
+        while slow != fast:
+            slow = slow.next
+            fast = fast.next
+
+        return slow
