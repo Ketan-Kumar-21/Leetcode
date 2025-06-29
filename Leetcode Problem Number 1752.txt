@@ -1,0 +1,30 @@
+#Brute Force:
+#TC:O(n^2) & Sc:O(n)
+
+
+class Solution:
+    def check(self, nums: List[int]) -> bool:
+        n=len(nums)
+        for i in range(n):
+            rotated=nums[i:]+nums[:i]
+            Ans=True
+            for j in range(n-1):
+                if rotated[j]>rotated[j+1]:
+                    Ans=False
+                    break
+            if Ans:
+                return True
+        return False
+
+
+#Optimal App
+#TC: O(n) & SC: O(1)
+
+class Solution:
+    def check(self, nums: List[int]) -> bool:
+        count = 0
+        n = len(nums)
+        for i in range(n):
+            if nums[i] > nums[(i + 1) % n]:
+                count += 1
+        return count <= 1
