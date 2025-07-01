@@ -20,7 +20,7 @@ class Solution:
         '''
 
 
-#Brute Force App:
+#Optimal App:
 #TC: O(n) & SC: O(1)
 
 class Solution:
