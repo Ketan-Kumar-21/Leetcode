@@ -1,0 +1,23 @@
+#Brute Force App:
+TC: O(n^2) & SC: O(1)
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        for i in range(len(nums)+1):
+            if i not in nums:
+                return i
+
+'''
+
+# Optimal App:
+TC: O(n) & SC: O(1)
+
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n=len(nums)
+        expectedsum=n*(n+1)//2
+        actualsum=0
+        for num in nums:
+            actualsum += num
+        return expectedsum-actualsum
+
+
