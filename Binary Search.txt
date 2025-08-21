@@ -1,0 +1,51 @@
+GFG Problem Link : https://www.geeksforgeeks.org/problems/binary-search-1587115620/1
+
+TC:O(logN)
+
+
+Code:
+
+
+
+
+
+class Solution:
+    def binarysearch(self, arr, k):
+        n = len(arr)
+        low, high = 0, n - 1   
+
+        while low <= high:
+            mid = (low + high) // 2
+            if arr[mid] == k:
+                return mid        
+              
+            elif arr[mid] < k:
+                low = mid + 1
+            else:
+                high = mid - 1
+
+        return -1
+
+
+
+# CODE FOR FIRST AND LAST OCCURENCE
+
+
+class Solution:
+    def binarysearch(self, arr, k):
+        n = len(arr)
+        low, high = 0, n - 1
+        ans = -1   
+
+        while low <= high:
+            mid = (low + high) // 2
+            if arr[mid] == k:
+                ans = mid         
+                high = mid - 1 #first occurence
+            #for last occurence low=mid+1
+            elif arr[mid] < k:
+                low = mid + 1
+            else:
+                high = mid - 1
+
+        return ans
