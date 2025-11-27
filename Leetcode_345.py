@@ -30,7 +30,9 @@ def test():
     test_helper("aA", "Aa")
     test_helper("AEIOU", "UOIEA")
     test_helper("xyz", "xyz")
-    test_helper("abecidofu", "ubocidafe")
+    test_helper("abecidofu", "ubocidefa")
+    test_helper("abecidofu", "ubocidefa")
+
     test_helper(" ", " ")
     test_helper("", "")
 
